@@ -2,9 +2,8 @@ import React from "react";
 import "./App.css"; // Importa los estilos
 
 import { BrowserRouter as Router } from "react-router-dom";
-import AppLayout from "./Views/LayoutView";
-import TabRececetaIngrediente from "./Views/TabsRecetaIngrediente";
-
+import AppLayout from "./views/LayoutView";
+import TabRececetaIngrediente from "./views/TabsRecetaIngrediente";
 const App = () => {
   return (
     <Router>

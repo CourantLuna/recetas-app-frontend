@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import api from "../api";
-import SearchBar from "../Components/SearchBar";
-import AddRecipeDialog from "../Components/RecipeDialog";
-import DeleteDialog from "../Components/DeleteDialog";
+import SearchBar from "../components/SearchBar";
+import AddRecipeDialog from "../components/RecipeDialog";
+import DeleteDialog from "../components/DeleteDialog";
 import DetallesReceta from "./DetallesReceta";
 
 import {CircularProgress,Rating,IconButton,Card, CardMedia, Typography, CardActions, Box,
