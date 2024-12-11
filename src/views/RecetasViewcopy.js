@@ -60,7 +60,7 @@ const RecetasView = () => {
         response = await api.get("/recetas");
       } else {
         // Llamada al endpoint de búsqueda
-        response = await api.get(`/search/recetas?p=${term}`);
+        response = await api.get(`/search?p=${term}`);
       }
 
       setRecetas(response.data); // Actualizar las recetas con los resultados
@@ -141,8 +141,8 @@ const RecetasView = () => {
 
   return (
     <Box>
-     
-      {/* Row: Search Bar + Add [Recipe] Button */}
+      {/* Search Bar */}
+
       <Grid2
       container
       rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 2 }}

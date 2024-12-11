@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import AppLayout from "./views/LayoutView";
 // import TabRececetaIngrediente from "./views/TabsRecetaIngrediente";
 import CustomTabs from "./components/customTabs";
-import RecetasView from "./views/RecetasView";
+import RecetasViewCopy from "./views/RecetasView";
 import IngredientesView from "./views/IngredientesView";
 const App = () => {
 
@@ -14,7 +14,7 @@ const App = () => {
     {
       value: "recetas",
       label: "Recetas",
-      content: <RecetasView />, // Vista para esta pestaña
+      content: <RecetasViewCopy />, // Vista para esta pestaña
     },
     {
       value: "ingredientes",
