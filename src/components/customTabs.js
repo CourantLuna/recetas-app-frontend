@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Tab, Tabs } from '@mui/material';
-import RecetasView from './RecetasView';
-import IngredientesView from './IngredientesView';
 
-const TabsRecetaIngrediente = () => {
-  const [activeTab, setActiveTab] = useState('recetas'); // Estado para controlar la pestaña activa
+const CustomTabs = ({ tabs }) => {
+  const [activeTab, setActiveTab] = useState(tabs[0]?.value || ''); // Estado para la pestaña activa
 
   const handleChange = (event, newValue) => {
     setActiveTab(newValue); // Cambiar el estado según la pestaña seleccionada
@@ -16,11 +14,12 @@ const TabsRecetaIngrediente = () => {
         <Tabs
           value={activeTab}
           onChange={handleChange}
-          aria-label="primary tabs example"
+          aria-label="dynamic tabs"
           centered
         >
-          <Tab value="recetas" label="Recetas" />
-          <Tab value="ingredientes" label="Ingredientes" />
+          {tabs.map((tab) => (
+            <Tab key={tab.value} value={tab.value} label={tab.label} />
+          ))}
         </Tabs>
       </Box>
       <Box
@@ -30,12 +29,16 @@ const TabsRecetaIngrediente = () => {
           padding: 3, // Espaciado interno
         }}
       >
-        {/* Renderizar el contenido basado en la pestaña activa */}
-        {activeTab === 'recetas' && <RecetasView />}
-        {activeTab === 'ingredientes' && <IngredientesView />}
+        {/* Renderizar el contenido de la pestaña activa */}
+        {tabs.map(
+          (tab) =>
+            activeTab === tab.value && (
+              <React.Fragment key={tab.value}>{tab.content}</React.Fragment>
+            )
+        )}
       </Box>
     </Box>
   );
 };
 
-export default TabsRecetaIngrediente;
+export default CustomTabs;

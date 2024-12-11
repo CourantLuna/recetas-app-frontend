@@ -119,7 +119,7 @@ const handleDeleteIngrediente = async (ingredienteID) => {
 
   try {
     setLoading(true);
-    await api.delete(`/recetaingredientes/${receta.RecetaID}/${ingredienteID}`); // Llama al endpoint para eliminar
+    await api.delete(`http://localhost:3001/api/recetaingredientes/${receta.RecetaID}/${ingredienteID}`); // Llama al endpoint para eliminar
     setIngredientes((prev) =>
       prev.filter((ingrediente) => ingrediente.Ingrediente.IngredienteID !== ingredienteID) // Actualiza la lista
     );
