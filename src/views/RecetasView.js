@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import api from "../api";
-import SearchBar from "../components/SearchBar";
-import AddRecipeDialog from "../components/RecipeDialog";
-import DeleteDialog from "../components/DeleteDialog";
+import SearchBar from "../components/searchBar";
+import AddRecipeDialog from "../components/recipeDialog";
+import DeleteDialog from "../components/deleteDialog";
 import DetallesReceta from "./DetallesReceta";
 
 import {CircularProgress,Rating,IconButton,Card, CardMedia, Typography, CardActions, Box,
@@ -290,19 +290,6 @@ const RecetasView = () => {
                       Clic para ver más
                     </Box>
 
-                    {/* <Fab
-                      size="small"
-                      color="primary"
-                      aria-label="upload"
-                      sx={{
-                        position: "absolute",
-                        bottom: 8,
-                        right: 8,
-                        zIndex: 10,
-                      }}
-                    >
-                      <MdUpload />
-                    </Fab> */}
                   </Box>
 
                   {/* Cuarta fila: Chips con iconos */}
@@ -331,7 +318,6 @@ const RecetasView = () => {
                     />
                   </CardContent>
 
-                  {/* Quinta fila: Acciones */}
                   {/* Quinta fila: Acciones */}
                   <CardActions
                     sx={{ justifyContent: "space-around", padding: 1 }}
