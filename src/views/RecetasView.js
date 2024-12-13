@@ -152,7 +152,8 @@ const RecetasView = () => {
     >
       {/* Search Bar */}
       <Grid2 item size={8}>
-      <SearchBar onSearch={handleSearch}/>
+      <SearchBar onSearch={handleSearch} placeholder="Buscar recetas..."/>
+      
       </Grid2>
 
       {/* Add Recipe Button */}

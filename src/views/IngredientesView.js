@@ -88,6 +88,7 @@ const IngredientesView = () => {
         <Grid2 item size={8}>
           <SearchBar
             onSearch={(term) => fetchIngredientes(term)} // Pasar el término de búsqueda
+            placeholder="Buscar ingredientes..."
           />
         </Grid2>
         <Grid2 item size={3}>

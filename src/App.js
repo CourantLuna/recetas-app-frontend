@@ -3,7 +3,6 @@ import "./App.css"; // Importa los estilos
 
 import { BrowserRouter as Router } from "react-router-dom";
 import AppLayout from "./views/LayoutView";
-// import TabRececetaIngrediente from "./views/TabsRecetaIngrediente";
 import CustomTabs from "./components/customTabs";
 import RecetasViewCopy from "./views/RecetasView";
 import IngredientesView from "./views/IngredientesView";
