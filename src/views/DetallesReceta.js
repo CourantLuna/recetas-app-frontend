@@ -107,9 +107,6 @@ const DetallesReceta = ({ open, onClose, receta }) => {
   }
 };
 
-
-
-
 // Manejar el botón de eliminar ingrediente
 const handleDeleteIngrediente = async (ingredienteID) => {
   if (!receta || !receta.RecetaID) {
