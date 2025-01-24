@@ -1,70 +1,182 @@
-# Getting Started with Create React App
+# RecetasApp - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenido al repositorio del **frontend** de RecetasApp, una aplicación interactiva y moderna para la gestión y visualización de recetas culinarias. Este proyecto está desarrollado utilizando **React.js** con Material-UI para la interfaz de usuario, ofreciendo una experiencia ágil, responsiva y atractiva.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Tabla de Contenidos
 
-### `npm start`
+- [Descripción](#descripción)
+- [Características Principales](#características-principales)
+- [Tecnologías Usadas](#tecnologías-usadas)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Instalación](#instalación)
+- [Scripts Disponibles](#scripts-disponibles)
+- [Flujo de Trabajo](#flujo-de-trabajo)
+- [Contribuciones](#contribuciones)
+- [Licencia](#licencia)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Descripción
 
-### `npm test`
+El frontend de RecetasApp sirve como la cara visible de la aplicación. Está diseñado para facilitar la interacción con las recetas y los ingredientes mediante una interfaz amigable y funcionalidades intuitivas.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Entre las funcionalidades principales se incluyen:
 
-### `npm run build`
+- Navegación dinámica entre **Recetas** e **Ingredientes** mediante pestañas.
+- Visualización, creación, edición y eliminación de recetas e ingredientes.
+- Soporte para interacciones avanzadas como autocompletado, calificaciones y manejo de información nutricional.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Características Principales
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Navegación Fluida:** Uso de **React Router** para manejar rutas dinámicas y asegurar transiciones rápidas.
+- **Componentes Modulares:** Divididos en vistas (Views) y componentes reutilizables (Components).
+- **Diseño Responsivo:** Material-UI asegura que la interfaz sea visualmente atractiva en dispositivos móviles y de escritorio.
+- **Estado Dinámico:** Manejo de datos con **hooks** como `useState` y `useEffect` para garantizar actualizaciones en tiempo real.
+- **Integración Backend:** Consumo de APIs desarrolladas con Node.js y Express para la gestión de recetas e ingredientes.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tecnologías Usadas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Lenguajes y Librerías
+- **React.js**: Para la construcción de la interfaz de usuario.
+- **Material-UI**: Para componentes estilizados y responsivos.
+- **Axios**: Para el consumo de APIs REST.
+- **React Router**: Manejo de rutas dinámicas.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Estilos
+- **CSS personalizado**: Para ajustes adicionales en diseño.
+- **Material-UI Themeing**: Consistencia en los estilos globales.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Herramientas
+- **Node.js y npm**: Para la gestión de dependencias.
+- **Vite/React Scripts**: Para desarrollo y construcción del proyecto.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Estructura del Proyecto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+recetasapp-frontend/
+├── public/               # Archivos estáticos
+├── src/
+│   ├── components/       # Componentes reutilizables (RecipeCard, SearchBar, etc.)
+│   ├── views/            # Vistas principales (RecetasView, IngredientesView, etc.)
+│   ├── api/              # Configuración de Axios y endpoints
+│   ├── App.js            # Entrada principal de la app
+│   ├── index.js          # Renderizado principal
+├── package.json          # Dependencias y scripts
+├── README.md             # Este archivo
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Instalación
 
-### Analyzing the Bundle Size
+Sigue estos pasos para ejecutar el frontend localmente:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Clona este repositorio:
 
-### Making a Progressive Web App
+   ```bash
+   git clone https://github.com/tuusuario/recetasapp-frontend.git
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. Navega al directorio del proyecto:
 
-### Advanced Configuration
+   ```bash
+   cd recetasapp-frontend
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Instala las dependencias:
 
-### Deployment
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. Crea un archivo `.env` en la raíz del proyecto y configura las variables de entorno necesarias, como la URL base del backend:
 
-### `npm run build` fails to minify
+   ```env
+   REACT_APP_API_BASE_URL=http://localhost:3001/api
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. Inicia la aplicación:
+
+   ```bash
+   npm start
+   ```
+
+6. Abre el navegador en `http://localhost:3000` para ver la aplicación en acción.
+
+---
+
+## Scripts Disponibles
+
+En el directorio del proyecto, puedes ejecutar los siguientes comandos:
+
+- **`npm start`**: Corre la aplicación en modo desarrollo.
+- **`npm run build`**: Genera una versión optimizada para producción.
+- **`npm test`**: Ejecuta pruebas unitarias.
+- **`npm run lint`**: Analiza y formatea el código siguiendo las reglas de ESLint.
+
+---
+
+## Flujo de Trabajo
+
+1. **Pestañas Dinámicas:**
+   - Navega entre recetas e ingredientes desde la interfaz principal.
+
+2. **Gestión de Recetas:**
+   - Añade, edita o elimina recetas desde la vista de recetas.
+   - Visualiza los detalles completos de cada receta (ingredientes, instrucciones, calificaciones).
+
+3. **Gestión de Ingredientes:**
+   - Añade, edita o elimina ingredientes desde la vista de ingredientes.
+   - Asocia ingredientes con recetas mediante un flujo de autocompletado y cantidad.
+
+4. **Consumo de APIs:**
+   - Las acciones en el frontend se sincronizan con el backend mediante Axios.
+
+---
+
+## Contribuciones
+
+¡Las contribuciones son bienvenidas! Si deseas contribuir:
+
+1. Haz un fork de este repositorio.
+2. Crea una nueva rama:
+
+   ```bash
+   git checkout -b feature/nueva-funcionalidad
+   ```
+
+3. Realiza los cambios y haz commit:
+
+   ```bash
+   git commit -m "Agrega nueva funcionalidad"
+   ```
+
+4. Sube los cambios a tu rama:
+
+   ```bash
+   git push origin feature/nueva-funcionalidad
+   ```
+
+5. Abre un Pull Request.
+
+---
+
+## Licencia
+
+Este proyecto está licenciado bajo la **MIT License**. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
+
+---
+
+## Contacto
+
+Para cualquier consulta o reporte de errores, por favor contacta a **[tu-email@ejemplo.com](mailto:heydi.working@gmail.com)** o abre un issue en el repositorio.
+
+¡Gracias por contribuir a RecetasApp!
